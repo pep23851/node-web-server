@@ -5,9 +5,9 @@ const fs = require('fs');
 const port = process.env.PORT || 3000;
 var app = express();
 
-hbs.registerPartials(__dirname + '/views/partials')
-app.set('view engine', 'hbs');
-
+hbs.registerPartials(__dirname + '/views/partials') 
+app.set('view engine', 'hbs'); 
+ 
 app.use((req, res, next) => {
   var now = new Date().toString();
   var log = `${now}: ${req.method} ${req.url}`;
@@ -28,7 +28,7 @@ hbs.registerHelper('getCurrentYear', () => {
 });
 
 hbs.registerHelper('screamIt', (text) => {
-  return text.toUpperCase();
+  return text.toUpperCase() + "It should have changed";
 });
 
 app.get('/', (req, res) => {
